@@ -1,6 +1,5 @@
 name: "Yay internet!"
 output_dir: "."
-site: "rmarkdown::render_site"
 navbar:
   title: "Home"
   right:
