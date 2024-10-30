@@ -1,0 +1,96 @@
+---
+title: "Problem 2"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+---
+
+```{r}
+library(tidyverse)
+library(p8105.datasets)
+library(plotly)
+```
+
+```{r}
+data("rest_inspec")
+# Load the dataset and remove rows with missing values for 'boro' and 'score'
+data("rest_inspec")
+df <- rest_inspec |>
+  filter(!is.na(boro), boro != "", boro != "Missing", !is.na(score), !is.na(grade)) |>
+  mutate(
+    cuisine_description = ifelse(
+      cuisine_description == "Latin (Cuban, Dominican, Puerto Rican, South & Central American)", 
+      "Latin", 
+      cuisine_description
+    )
+  )
+```
+
+
+Column {data-width=650}
+-----------------------------------------------------------------------
+
+### Chart A
+```{r}
+# Filter out Manhattan data and scatter plot inspection score vs. cuisine type
+man_type <- df |>
+  filter(boro == "MANHATTAN") |>
+  sample_n(1000) |>  
+  plot_ly(x = ~cuisine_description, y = ~score, 
+          type = 'scatter', mode = 'markers',
+          text = ~paste("Cuisine:", cuisine_description, "<br>Score:", score),
+          hoverinfo = 'text') |>
+  layout(title = "Inspection Score vs. Cuisine Type in Manhattan",
+         xaxis = list(title = "Cuisine Type"),
+         yaxis = list(title = "Inspection Score"))
+
+man_type
+```
+
+
+Column {data-width=350}
+-----------------------------------------------------------------------
+
+### Chart B
+
+```{r}
+# Bar plot: average inspection score by borough
+avg_boro <- df |>
+  group_by(boro) |>
+  summarize(avg_score = mean(score, na.rm = TRUE)) |>
+  plot_ly(x = ~boro, y = ~avg_score, type = 'bar', color = ~boro,
+          text = ~paste("Borough:", boro, "<br>Average Score:", round(avg_score, 2)),
+          hoverinfo = 'text') |>
+  layout(title = "Average Inspection Score by Borough",
+         xaxis = list(title = "Borough"),
+         yaxis = list(title = "Average Score"))
+
+avg_boro
+```
+
+-----------------------------------------------------------------------
+
+### Chart C
+
+```{r}
+# Box plot: distribution of scores for top 5 cuisine types
+top_cui <- df |>
+  count(cuisine_description) |>
+  arrange(desc(n)) |>
+  head(5) |>
+  pull(cuisine_description)
+
+score_distribution_plot <- df |>
+  filter(cuisine_description %in% top_cui) |>
+  plot_ly(y = ~score, color = ~cuisine_description, type = 'box',
+          text = ~paste("Cuisine:", cuisine_description, "<br>Score:", score),
+          hoverinfo = 'text') |>
+  layout(title = "Score Distribution by Top 5 Cuisine Types",
+         yaxis = list(title = "Inspection Score"))
+
+score_distribution_plot
+```
+
+
+
