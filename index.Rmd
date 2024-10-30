@@ -2,8 +2,8 @@
 title: "Tianci's Website"
 output:
   html_document:
-    toc: false
-    theme: cerulean
+    toc: true
+    toc_float: true
 ---
 
 # Welcome
