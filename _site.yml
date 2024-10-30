@@ -1,10 +1,13 @@
 name: "Yay internet!"
 output_dir: "."
+site: "rmarkdown::render_site"
 navbar:
   title: "Home"
   right:
     - text: "Resume"
       href: resume.html
+    - text: "problem2"
+      href: problem2.html
     - icon: fa-github fa-lg
       href: http://github.com/tzhu07/
     - icon: fa-envelope fa-lg
