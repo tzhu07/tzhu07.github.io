@@ -1,0 +1,16 @@
+name: "Yay internet!"
+output_dir: "."
+navbar:
+  title: "Home"
+  right:
+    - text: "Resume"
+      href: resume.html
+    - icon: fa-github fa-lg
+      href: http://github.com/tzhu07/
+    - icon: fa-envelope fa-lg
+      href: mailto:tz2659@cumc.columbia.edu
+    - text: "LinkedIn"
+      href: https://www.linkedin.com/in/tianci-zhu-tracy/
+output:
+  html_document:
+    theme: cerulean

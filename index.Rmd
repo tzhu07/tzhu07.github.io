@@ -1,0 +1,16 @@
+---
+title: "Tianci's Website"
+output:
+  html_document:
+    toc: false
+    theme: cerulean
+---
+
+# Welcome
+
+Hi, my name is Tianci Zhu. I am a first-year MS student in Biostatistics with a focus on Public Health Data Science. \
+This is my dog, Tudor:
+
+<img src="E:/Tracy/fall 2024/P8105 Data Science/tzhu07.github.io/tudor.jpg" style="width:40%">
+
+Please navigate to my resume to learn more about my academic and professional background.

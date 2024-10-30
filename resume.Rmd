@@ -1,0 +1,54 @@
+---
+title: "Resume"
+output:
+  html_document:
+    toc: true
+    toc_float: true
+    theme: cerulean
+---
+# Resume
+
+## Education
+**Columbia University**  
+*MS Biostatistics – Public Health Data Science*  
+Expected May 2026 | New York, NY  
+
+**University of California, Davis**  
+*BS Statistics - Data Science Track, Minor in Economics*  
+June 2024 | Davis, CA   
+
+## Professional Experience
+
+**Mobidrop Biotechnology**  
+*Bioinformatician Intern*  
+July - September 2023 | Boston, Remote  
+- Automated the extraction of gene information from SynEcoSys single-cell RNA sequencing database.\
+- Developed predictive models for drug responses (F1 score: 0.87) using Random Forest, SVM, and REF.\
+- Designed tools for model construction and drug response prediction, improving accuracy by 7%.\
+
+**EMR Technical Solutions**  
+*Data Analyst Intern*  
+March - June 2023 | Edmond, Remote  
+- Conducted data cleaning and analysis of 480+ datasets on Medi-Cal enrollment.\
+- Designed a machine learning model (AUC: 0.94) to predict Medicaid expenditures.\
+- Created interactive client-centric charts with Instadeq visualization tools.\
+
+## Academic Projects
+
+**Nepal Household Crowding Study** (Nov - Dec 2023)  
+- Analyzed relationship between overcrowding and socio-economic factors using a dataset of 13,786 households.\
+- Achieved 60% prediction accuracy using classification models, optimized with GridSearchCV.\
+- Conducted statistical tests, uncovering significant regional disparities.\
+
+**House Price Predictive Analysis** (Apr - Jun 2023)  
+- Developed linear regression model in R for house price predictions, using decomposition methods.\
+- Achieved 0.85% accuracy in house price prediction with feature importance via LASSO regression.\
+
+**Cardiovascular Disease Analysis** (Nov - Dec 2022)  
+- Cleaned data for CDC’s survey of 320,000 US adults, addressing outliers in health metrics.\
+- Developed a GLM model, improving predictive accuracy by 24% for cardiovascular disease risk.\
+
+## Additional Information
+- **Languages:** Mandarin Chinese (Native); English (Professional Proficiency)
+- **Technical Skills:** R, Python, SQL, Linux, Matlab, LaTex, PowerBI, SAS, Microsoft Office Suite
+- **GitHub:** [tzhu07](https://github.com/tzhu07)
